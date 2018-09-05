@@ -1,5 +1,7 @@
-# 初期設定, .idea, git を無視
+# 初期設定, .idea, git .exe .iml を無視
 *~
 .DS_Store
 .idea
 git
+.exe
+.iml
