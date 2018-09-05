@@ -1,0 +1,5 @@
+# 初期設定, .idea, git を無視
+*~
+.DS_Store
+.idea
+git
