@@ -1,0 +1,3 @@
+# hello.go -> Hello, world!の表示
+# hello_web.go -> ウェブブラウザ上で Helloを表示する
+# calc_web.go -> ウェブブラウザ上で計算し、結果を表示する
