@@ -6,19 +6,38 @@
         button {width:30px; height:30px}
     </style>
 </head><body>
+
 {{/* $.Turnは手番 */}}
-<div>[{{$.Turn}}の手番]</div><br>
+<div>
+    {{if $.Win}}
+        [{{$.Winner}}の勝ち]
+    {{else if $.Draw}}
+        [引き分け]
+    {{else}}
+        [{{$.Turn}}の手番]
+    {{end}}
+</div><br>
+
 <form action="/game" method="post">
+    {{/* 手番は、inputタグのhiddenで送信 */}}
+    <input type="hidden" name="turn" value="{{$.Turn}}">
     <table>
-    {{/* $.Boardは盤面のデータ（[3][3]string型）*/}}
     {{range $row, $rows := $.Board}}
         <tr>
         {{range $col, $cell := $rows}}
-            <td><button></button></td>
+            <td>
+                {{if $cell}}
+                {{$cell}}
+                    <input type="hidden" name="c{{$row}}{{$col}}" value="{{$cell}}">
+                {{else}} {{/* 「””」の場合 */}}
+                    <button name ="c{{$row}}{{$col}}" value="{{$.Turn}}"></button>
         {{end}}
-        </tr>
+        </td>
     {{end}}
-    </table>
+    </tr>
+ {{end}}
+ </table>
 </form>
+
 <a href="/game">最初に戻る</a>
 </body></html>
