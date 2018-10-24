@@ -1,0 +1,5 @@
+Practice ディレクトリについて
+
+declear_variable.go ->  変数の宣言について（var と := が同じであることの確認）
+global_variable.go ->   グローバル変数の宣言と関数による処理
+count.go ->             インクリメントとデクリメントの動作確認
